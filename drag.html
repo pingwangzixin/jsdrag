@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{width:200px;height:200px;position:absolute;left: 50%;top:50%;margin-left:-100px;margin-top:-100px;background: #798;cursor:move;color:#fff;line-height: 100px;text-align: center;font-size:50px;}
+    </style>
+</head>
+<body>
+    <div id="img">拖动我</div>
+    <script>
+        var img=document.getElementById("img");
+        
+        img.onmousedown=function(e){
+            document.onmousemove=function(e){
+                var e =e ||window.e
+                var w = e.clientX+'px'
+                var h = e.clientY+'PX'
+
+                img.style.left=w;
+                img.style.top=h;
+            }
+           
+        }
+        
+        document.onmouseup=function(){
+            document.onmousemove=null
+        }
+    </script>
+</body>
+</html>
